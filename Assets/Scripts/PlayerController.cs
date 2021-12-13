@@ -27,6 +27,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision otherCollider)
     {
-        IsOnTheGround = true;
+        if (otherCollider.gameObject.CompareTag("Ground"))
+        {
+            IsOnTheGround = true;
+        }
+
+        if (otherCollider.gameObject.CompareTag("Obstacle"))
+        {
+           //Morir
+        }
+
     }
 }
