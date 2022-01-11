@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
     //Límite pantalla
-    private float XLimit = 5f;
+    private float XLimit = 10f;
     // Start is called before the first frame update
     void Start()
     {

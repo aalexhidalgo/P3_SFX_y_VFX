@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
     public bool gameOver;
-
+    private Animator PlayerAnimator;
     private Rigidbody PlayerRigidbody;
     [SerializeField] private float JumpForce = 400f;
     public float GravityModifier = 1f;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
         gameOver = false;
         PlayerRigidbody = GetComponent<Rigidbody>();
         Physics.gravity *= GravityModifier;
+
+        PlayerAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerRigidbody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             IsOnTheGround = false;
+            PlayerAnimator.SetTrigger("Jump_trig");
         }
     }
 
@@ -37,6 +41,11 @@ public class PlayerController : MonoBehaviour
 
         if (otherCollider.gameObject.CompareTag("Obstacle"))
         {
+            //Muerte random
+            int RandomDeath = Random.Range(1, 3);
+            PlayerAnimator.SetBool("Death_b", true);
+            PlayerAnimator.SetInteger("DeathType_int", RandomDeath);
+
             gameOver = true;
         }
 
