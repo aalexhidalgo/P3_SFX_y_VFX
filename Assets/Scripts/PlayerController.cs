@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool gameOver;
+
     private Rigidbody PlayerRigidbody;
     [SerializeField] private float JumpForce = 400f;
     public float GravityModifier = 1f;
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOver = false;
         PlayerRigidbody = GetComponent<Rigidbody>();
         Physics.gravity *= GravityModifier;
     }
@@ -20,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && IsOnTheGround)
         {
-            PlayerRigidbody.AddForce(Vector3.up * JumpForce);
+            PlayerRigidbody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             IsOnTheGround = false;
         }
     }
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
         if (otherCollider.gameObject.CompareTag("Obstacle"))
         {
-           //Morir
+            gameOver = true;
         }
 
     }

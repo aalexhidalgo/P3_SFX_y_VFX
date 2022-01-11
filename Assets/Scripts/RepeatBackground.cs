@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MoveLeft))]
 public class RepeatBackground : MonoBehaviour
 {
     public Vector3 InitialPos;

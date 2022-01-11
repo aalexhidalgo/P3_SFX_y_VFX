@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 1149245801}
   - component: {fileID: 1149245802}
   - component: {fileID: 1149245804}
+  - component: {fileID: 5689294308404236568}
+  - component: {fileID: 9002313575309607293}
   m_Layer: 0
   m_Name: Prop_Barrier03
   m_TagString: Obstacle
@@ -157,3 +159,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+--- !u!114 &5689294308404236568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9265df00df1726346b8a39fafbbe7f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9002313575309607293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc3f761f18cf8d44a27ef7916ed5868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Time: 5
